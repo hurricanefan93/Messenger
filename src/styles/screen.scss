@@ -1,8 +1,5 @@
 @import 'utility';
 
-$base-text-size: 16px;
-$base-font-family: sans-serif;
-
 html {
   @include full-height;
 }
@@ -10,4 +7,73 @@ html {
 body {
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
+  color: lighten($theme-color, 40%);
+  background-color: $theme-color;
+}
+
+.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer,
+header,
+main {
+  max-width: 30em;
+}
+
+h1 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.messageContainer {
+  height: 60vh;
+  width: 50vh;
+  border: thick solid white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  form {
+    input {
+      border: thin solid black;
+      width: 98.5%;
+      color: rgba(33, 33, 33, 0.95);
+      font-size: 1em;
+      line-height: 1.5em;
+      background-color: lighten($theme-color, 20%);
+      font-family: $alt-font-family;
+      opacity: 0.5;
+
+      &:focus {
+        outline: 0;
+        background-color: lighten($theme-color, 30%);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+ul.one-list {
+  @include reset-list;
+
+  font-family: $alt-font-family;
+
+  li {
+    margin: 0.2em;
+    align-items: flex-start;
+    display: flex;
+
+    &.completed {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  }
 }

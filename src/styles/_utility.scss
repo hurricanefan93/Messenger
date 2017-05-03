@@ -1,5 +1,10 @@
-$base-text-size: 16px;
-$base-font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Neucha|Comfortaa:300');
+
+$base-text-size: 24px;
+$base-font-family: "Comfortaa", sans-serif;
+$alt-font-family: "Neucha", cursive;
+
+$theme-color: rgb(18, 125, 96);
 
 // Remove the browsers built-in styling for lists elements.
 @mixin reset-list {
@@ -16,7 +21,8 @@ $base-font-family: sans-serif;
   height: 100%;
 
   body,
-  #root {
-    min-height: 100%;
+  #root,
+  #root > div {
+    min-height: 100vh;
   }
 }
