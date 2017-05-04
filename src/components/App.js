@@ -42,7 +42,7 @@ signIn = (event) => {
         <div className='messageContainer'>
         <ul className='mainContainer'>
           {_.map(this.state.items, ({ username, text }, key) =>
-            <li className='messages' key={key}>{username}: {text}</li>
+            <li className='messages' key={key}>{username} ~ {text}</li>
           )}
         </ul>
         <div className='inputContainer'>
@@ -54,13 +54,15 @@ signIn = (event) => {
     <footer>&copy; 2017 Cohort Seven.</footer>
   </div>
     } else {
-      return <div className='App'>
+      return <div className='Home'>
         <h1>Messenger</h1>
+        <div className='userInput'>
         <form onSubmit={this.signIn}>
           <p>Enter Your Username</p>
             <input className='userBox' ref='username' />
           </form>
         </div>
+      </div>
     }
   }
 }

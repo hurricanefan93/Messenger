@@ -21,7 +21,6 @@ main {
   flex: 1;
 }
 
-footer,
 header,
 main {
   max-width: 30em;
@@ -34,12 +33,13 @@ h1 {
 
 .messageContainer {
   height: 60vh;
-  width: 50vh;
+  width: 60vh;
   border: thick solid white;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow-y: scroll;
 
   form {
     input {
@@ -61,12 +61,13 @@ h1 {
   }
 }
 
-ul.one-list {
+ul.mainContainer {
   @include reset-list;
 
   font-family: $alt-font-family;
 
   li {
+    color: rgb(201, 201, 201);
     margin: 0.2em;
     align-items: flex-start;
     display: flex;
@@ -76,4 +77,35 @@ ul.one-list {
       text-decoration: line-through;
     }
   }
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .userBox,
+  input {
+    width: 100%;
+    border: thick solid white;
+    border-radius: 4px;
+    color: rgba(33, 33, 33, 0.95);
+    font-size: 1em;
+    line-height: 1.5em;
+    background-color: lighten($theme-color, 10%);
+    font-family: $alt-font-family;
+    opacity: 0.5;
+
+    &:focus {
+      outline-color: white;
+      background-color: lighten($theme-color, 30%);
+      opacity: 1;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
